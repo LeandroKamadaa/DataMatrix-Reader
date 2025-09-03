@@ -20,7 +20,7 @@ function Dashboard() {
 
   return (
     <div className="dm-container">
-      <h2 className="dm-title">📊 Estoque de Medicamentos</h2>
+      <h2 className="dm-title">Estoque de Medicamentos</h2>
 
       <div className="dm-card">
         <table className="dm-table">

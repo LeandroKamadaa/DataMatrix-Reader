@@ -1,59 +1,75 @@
+/* Dashboard styles - palette provided by the user
+   Colors:
+     title:  #0A4DAA
+     text:   #2D3748
+     header: #38B2AC
+     bg:     #F7FAFC
+*/
+
+:root {
+  --dm-bg: #f7fafc;
+  --dm-title: #0a4daa;
+  --dm-text: #2d3748;
+  --dm-header: #38b2ac;
+  --dm-hover: rgba(10, 77, 170, 0.06);
+}
+
+/* Container */
 .dm-container {
   padding: 16px;
   font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background: #f8f9fb;
+  background: var(--dm-bg);
   display: flex;
   flex-direction: column;
-  align-items: center; /* centraliza horizontalmente o conteúdo do container */
+  align-items: center;
 }
 
 .dm-title {
-  color: #0b5fff;
+  color: var(--dm-title);
   margin: 0;
   font-size: 1.25rem;
-  text-align: center; /* título centralizado */
+  text-align: center;
 }
 
-/* card mantém largura máxima e centra o conteúdo */
 .dm-card {
   margin-top: 12px;
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  background: #ffffff;
+  background: #fff;
   width: 100%;
-  max-width: 900px; /* ajustável conforme necessidade */
+  max-width: 900px;
 }
 
-/* força colunas com mesmo tamanho */
 .dm-table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed; /* importante para colgroup funcionar */
+  table-layout: fixed;
 }
 
 .dm-thead {
-  background: #f3f6ff;
+  background: var(--dm-header);
 }
 
 .dm-th {
   padding: 10px 12px;
   border-bottom: 1px solid #e6e9f2;
   font-weight: 600;
-  color: #273142;
-  text-align: center; /* cabeçalhos centralizados */
+  color: var(--dm-text);
+  text-align: center;
 }
 
 .dm-tr {
   border-bottom: 1px solid #f0f2fa;
 }
+
 .dm-td {
   padding: 10px 12px;
-  color: #2b3a4a;
-  text-align: center; /* células centralizadas */
+  color: var(--dm-text);
+  text-align: center;
 }
 
-/* remove regras de alinhamento específicas antigas (mantidas por compatibilidade) */
+/* Helpers */
 .dm-th-left,
 .dm-th-right,
 .dm-th-center,
@@ -63,7 +79,6 @@
   width: auto;
 }
 
-/* Responsivo simples */
 @media (max-width: 540px) {
   .dm-title {
     font-size: 1rem;
@@ -76,4 +91,24 @@
     font-size: 0.95rem;
     padding: 8px 10px;
   }
+}
+
+/* Zebra striping */
+.dm-table tbody tr {
+  transition: background-color 120ms ease-in-out;
+}
+.dm-table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+.dm-table tbody tr:nth-child(even) {
+  background-color: rgba(45, 55, 72, 0.03);
+}
+
+.dm-table tbody tr:hover {
+  background: var(--dm-hover);
+}
+
+.dm-table tbody tr .dm-td,
+.dm-table tbody tr:hover .dm-td {
+  color: var(--dm-text);
 }
