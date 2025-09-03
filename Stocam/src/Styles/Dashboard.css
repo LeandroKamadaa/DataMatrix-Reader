@@ -1,0 +1,79 @@
+.dm-container {
+  padding: 16px;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #f8f9fb;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza horizontalmente o conteúdo do container */
+}
+
+.dm-title {
+  color: #0b5fff;
+  margin: 0;
+  font-size: 1.25rem;
+  text-align: center; /* título centralizado */
+}
+
+/* card mantém largura máxima e centra o conteúdo */
+.dm-card {
+  margin-top: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  width: 100%;
+  max-width: 900px; /* ajustável conforme necessidade */
+}
+
+/* força colunas com mesmo tamanho */
+.dm-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* importante para colgroup funcionar */
+}
+
+.dm-thead {
+  background: #f3f6ff;
+}
+
+.dm-th {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e6e9f2;
+  font-weight: 600;
+  color: #273142;
+  text-align: center; /* cabeçalhos centralizados */
+}
+
+.dm-tr {
+  border-bottom: 1px solid #f0f2fa;
+}
+.dm-td {
+  padding: 10px 12px;
+  color: #2b3a4a;
+  text-align: center; /* células centralizadas */
+}
+
+/* remove regras de alinhamento específicas antigas (mantidas por compatibilidade) */
+.dm-th-left,
+.dm-th-right,
+.dm-th-center,
+.dm-td-right,
+.dm-td-center {
+  text-align: center;
+  width: auto;
+}
+
+/* Responsivo simples */
+@media (max-width: 540px) {
+  .dm-title {
+    font-size: 1rem;
+  }
+  .dm-card {
+    max-width: 100%;
+  }
+  .dm-th,
+  .dm-td {
+    font-size: 0.95rem;
+    padding: 8px 10px;
+  }
+}
